@@ -19,7 +19,7 @@ return {
     },
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
-      virtual_text = true,
+      virtual_text = false,
       underline = true,
     },
     -- vim options can be configured here
@@ -59,6 +59,7 @@ return {
           desc = "Previous buffer",
         },
 
+        -- move lines up and down
         ["<A-j>"] = { ":m+<cr>==", desc = "Move line down" },
         ["<A-k>"] = { ":m .-2<cr>==", desc = "Move line up" },
 
@@ -77,6 +78,11 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+        -- Compiler mappings
+        ["<F6>"] = { "<cmd>CompilerOpen<cr>", noremap = true, silent = true },
+        ["<S-F6>"] = { "<cmd>CompilerStop<cr>" .. "<cmd>CompilerRedo<cr>", noremap = true, silent = true },
+        ["<S-F7>"] = { "<cmd>CompilerToggleResults<cr>", noremap = true, silent = true },
       },
       t = {
         -- setting a mapping to false will disable it
