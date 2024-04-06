@@ -11,7 +11,7 @@ return {
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
   { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
-  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
+  -- { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.motion.nvim-surround" },
