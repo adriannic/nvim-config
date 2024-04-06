@@ -67,8 +67,8 @@ return {
         ["<A-k>"] = { ":m .-2<cr>==", desc = "Move line up" },
 
         -- mappings seen under group name "Buffer"
-        ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-        ["<leader>bD"] = {
+        ["<Leader>bn"] = { "<Cmd>tabnew<Cr>", desc = "New tab" },
+        ["<Leader>bD"] = {
           function()
             require("astronvim.utils.status").heirline.buffer_picker(
               function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
@@ -83,9 +83,9 @@ return {
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
         -- Compiler mappings
-        ["<F6>"] = { "<cmd>CompilerOpen<cr>", noremap = true, silent = true },
-        ["<S-F6>"] = { "<cmd>CompilerStop<cr>" .. "<cmd>CompilerRedo<cr>", noremap = true, silent = true },
-        ["<S-F7>"] = { "<cmd>CompilerToggleResults<cr>", noremap = true, silent = true },
+        ["<F6>"] = { "<Cmd>CompilerOpen<Cr>", noremap = true, silent = true },
+        ["<S-F6>"] = { "<Cmd>CompilerStop<Cr>" .. "<cmd>CompilerRedo<cr>", noremap = true, silent = true },
+        ["<S-F7>"] = { "<Cmd>CompilerToggleResults<Cr>", noremap = true, silent = true },
       },
       t = {
         -- setting a mapping to false will disable it
