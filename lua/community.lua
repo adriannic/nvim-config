@@ -11,13 +11,10 @@ return {
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
   { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
-  -- { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.motion.tabout-nvim" },
-  { import = "astrocommunity.scrolling.cinnamon-nvim" },
-  { import = "astrocommunity.split-and-window.windows-nvim" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.docker" },
@@ -27,5 +24,8 @@ return {
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
+  { import = "astrocommunity.scrolling.cinnamon-nvim" },
+  { import = "astrocommunity.split-and-window.windows-nvim" },
+  { import = "astrocommunity.workflow.hardtime-nvim" },
   -- import/override with your plugins folder
 }
