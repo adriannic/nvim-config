@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
+  { import = "astrocommunity.editing-support.undotree" },
   { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
