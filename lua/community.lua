@@ -14,6 +14,7 @@ return {
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.motion.tabout-nvim" },
   { import = "astrocommunity.pack.bash" },
