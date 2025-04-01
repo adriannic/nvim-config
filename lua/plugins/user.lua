@@ -68,6 +68,16 @@ return {
     },
   },
 
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    lazy = false,
+    opts = {
+      filesystem = {
+        hijack_netrw_behavior = "disabled",
+      },
+    },
+  },
+
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
 
