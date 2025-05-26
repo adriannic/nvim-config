@@ -39,7 +39,7 @@ return {
     "mistricky/codesnap.nvim",
     opts = {
       bg_padding = 0,
-      save_path = os.getenv("XDG_PICTURES_DIR") or (os.getenv("HOME") .. "/Imágenes/Capturas")
+      save_path = os.getenv("XDG_PICTURES_DIR") or (os.getenv("HOME") .. "/Imágenes/Capturas"),
     },
   },
 

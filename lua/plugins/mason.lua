@@ -10,18 +10,12 @@ return {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
         -- install language servers
-        "lua-language-server",
-        "rust-analyzer",
 
         -- install formatters
-        "stylua",
-        "sonarlint-language-server",
 
         -- install debuggers
-        "debugpy",
 
         -- install any other package
-        "tree-sitter-cli",
       },
     },
   },
