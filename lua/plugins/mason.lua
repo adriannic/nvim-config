@@ -14,6 +14,8 @@ return {
         -- install formatters
 
         -- install debuggers
+        "codelldb",
+        "cpptools",
 
         -- install any other package
       },
