@@ -59,6 +59,15 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       -- first key is the mode
+      v = {
+        ["<Leader>y"] = {
+          function()
+            vim.cmd.normal{'y', bang = true}
+            print(vim.fn.getreg('0'))
+          end,
+          desc = "Print last yanked text to screen"
+        },
+      },
       n = {
         -- second key is the lefthand side of the map
 
