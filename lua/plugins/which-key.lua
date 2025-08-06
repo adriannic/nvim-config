@@ -1,4 +1,3 @@
----@type LazySpec
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
@@ -8,8 +7,6 @@ return {
       opts = {},
     },
   },
-  ---@module "which-key"
-  ---@type wk.Opts
   opts = {
     preset = "helix",
     show_help = false,
@@ -23,6 +20,7 @@ return {
       { "<Leader>j", group = "Jump" },
       { "<Leader>l", group = "LSP", mode = { "n", "v" } },
       { "<Leader>p", group = "Packages" },
+      { "<Leader>t", group = "Toggle" },
     },
     icons = {
       group = "",

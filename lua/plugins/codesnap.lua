@@ -1,4 +1,3 @@
----@type LazySpec
 return {
   "mistricky/codesnap.nvim",
   event = { "BufReadPre", "BufNewFile" },

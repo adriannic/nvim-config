@@ -1,4 +1,3 @@
----@type LazySpec
 return {
   "chrisgrieser/nvim-origami",
   event = { "BufReadPre", "BufNewFile" },

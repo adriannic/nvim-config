@@ -1,9 +1,16 @@
 local get_project_name = function() return vim.fn.getcwd():match "^.+/(.+)$" end
 
----@type LazySpec
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "yavorski/lualine-macro-recording.nvim", "nvim-tree/nvim-web-devicons" },
+  dependencies = {
+    "yavorski/lualine-macro-recording.nvim",
+    "nvim-tree/nvim-web-devicons",
+    {
+      "stevearc/aerial.nvim",
+      lazy = true,
+      opts = {},
+    }
+  },
   event = { "BufReadPre", "BufNewFile" },
   opts = {
     options = {
@@ -52,6 +59,6 @@ return {
   },
   keys = {
     { "H", "<cmd>bprevious<cr>", "Previous buffer" },
-    { "L", "<cmd>bnext<cr>", "Next buffer" },
+    { "L", "<cmd>bnext<cr>",     "Next buffer" },
   },
 }

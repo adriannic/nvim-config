@@ -1,4 +1,3 @@
----@type LazySpec
 return {
   "phaazon/hop.nvim",
   event = { "BufReadPre", "BufNewFile" },

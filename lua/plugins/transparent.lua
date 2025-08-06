@@ -1,4 +1,3 @@
----@type LazySpec
 return {
   "xiyaowong/transparent.nvim",
   config = function()

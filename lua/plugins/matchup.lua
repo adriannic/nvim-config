@@ -1,6 +1,5 @@
----@type LazySpec
 return {
   "andymass/vim-matchup",
-	event = { "BufReadPre", "BufNewFile" },
-	opts = {},
+  event = { "BufReadPre", "BufNewFile" },
+  opts = {},
 }
