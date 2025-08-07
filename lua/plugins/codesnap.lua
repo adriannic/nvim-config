@@ -3,9 +3,9 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   build = "make",
   keys = {
-    { "<Leader>cs", ":'<,'>CodeSnap<cr>", mode = { "v" }, desc = "CodeSnap (clipboard)" },
-    { "<Leader>cS", ":'<,'>CodeSnapSave<cr>", mode = { "v" }, desc = "CodeSnap (save)" },
-    { "<Leader>ch", ":'<,'>CodeSnapHighlight<cr>", mode = { "v" }, desc = "CodeSnap with highlight (clipboard)" },
+    { "<Leader>cs", ":'<,'>CodeSnap<cr>",              mode = { "v" }, desc = "CodeSnap (clipboard)" },
+    { "<Leader>cS", ":'<,'>CodeSnapSave<cr>",          mode = { "v" }, desc = "CodeSnap (save)" },
+    { "<Leader>ch", ":'<,'>CodeSnapHighlight<cr>",     mode = { "v" }, desc = "CodeSnap with highlight (clipboard)" },
     { "<Leader>cH", ":'<,'>CodeSnapSaveHighlight<cr>", mode = { "v" }, desc = "CodeSnap with highlight (save)" },
   },
   opts = {

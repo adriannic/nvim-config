@@ -40,11 +40,10 @@ return {
         opts = {},
       }
     },
-    opts = {
-      auto_update = true,
-      start_delay = 0,
-    },
-    config = function()
+    opts = function(_, opts)
+      opts.auto_update = true
+      opts.start_delay = 0
+
       vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
         group = vim.api.nvim_create_augroup("config.lsp-lens", { clear = true }),
         callback = function(_) vim.lsp.codelens.refresh { bufnr = 0 } end,
@@ -115,9 +114,8 @@ return {
   {
     "mfussenegger/nvim-lint",
     event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      require("lint").linters_by_ft = {}
-    end
+    opts = {},
+    config = function() end
   },
   {
     "rachartier/tiny-inline-diagnostic.nvim",
@@ -148,7 +146,7 @@ return {
       },
       { "<F7>", function() require("dapui").toggle() end, desc = "Debug: Toggle debug UI" },
     },
-    config = function()
+    opts = function(_, _)
       local dap = require "dap"
       local dapui = require "dapui"
 

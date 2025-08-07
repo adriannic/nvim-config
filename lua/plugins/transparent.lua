@@ -1,11 +1,9 @@
 return {
   "xiyaowong/transparent.nvim",
-  config = function()
-    require("transparent").setup {
-      extra_groups = {
-        "NormalFloat",
-        "NvimTreeNormal",
-      },
+  opts = function(_, opts)
+    opts.extra_groups = {
+      "NormalFloat",
+      "NvimTreeNormal",
     }
 
     vim.g.transparent_enabled = true

@@ -1,10 +1,10 @@
 return {
-  "folke/noice.nvim",
+	"folke/noice.nvim",
 	event = "CmdlineEnter",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 	},
-  opts = {
+	opts = {
 		lsp = {
 			signature = {
 				enabled = false,

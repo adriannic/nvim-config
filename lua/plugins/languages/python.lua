@@ -37,7 +37,7 @@ return {
     enabled = vim.fn.executable "fd" == 1 or vim.fn.executable "fdfind" == 1 or vim.fn.executable "fd-find" == 1,
     ft = "python",
     keys = {
-      { "<Leader>lv", "<Cmd>VenvSelect<CR>", desc = "LSP select virtualenv"}
+      { "<Leader>lv", "<Cmd>VenvSelect<CR>", desc = "LSP select virtualenv" }
     },
     opts = {},
     cmd = "VenvSelect",
@@ -49,8 +49,8 @@ return {
       {
         "mfussenegger/nvim-dap-python",
         dependencies = "mfussenegger/nvim-dap",
-        ft = "python", -- NOTE: ft: lazy-load on filetype
-        config = function(_, opts)
+        ft = "python",
+        opts = function(_, opts)
           local path = vim.fn.exepath "debugpy-adapter"
           if path == "" then path = vim.fn.exepath "python" end
           require("dap-python").setup(path, opts)
