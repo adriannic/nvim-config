@@ -8,10 +8,6 @@ return {
     "term.sources",
   },
   dependencies = {
-    {
-      "L3MON4D3/LuaSnip",
-      version = "v2.*",
-    },
     "rafamadriz/friendly-snippets",
     "folke/lazydev.nvim",
     "erooke/blink-cmp-latex",
@@ -19,15 +15,11 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   opts = {
-    snippets = {
-      preset = "luasnip",
-    },
     keymap = {
       preset = "none",
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
       ["<C-e>"] = { "hide", "fallback" },
       ["<CR>"] = { "accept", "fallback" },
-      ["<Tab>"] = { "accept", "fallback" },
       ["<C-k>"] = { "select_prev", "fallback" },
       ["<C-j>"] = { "select_next", "fallback" },
     },
