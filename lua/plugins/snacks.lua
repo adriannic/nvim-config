@@ -21,6 +21,10 @@ return {
           "╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚═╝ ╚═════╝",
         }, "\n"),
       },
+      sections = {
+        { section = "header" },
+        { section = "keys",  gap = 1, padding = 1 },
+      },
     },
     dim = { enabled = false },
     explorer = { enabled = true },
