@@ -110,6 +110,9 @@ return {
       "mason-org/mason.nvim",
       "mfussenegger/nvim-dap",
     },
+    opts = {
+      automatic_setup = true,
+    }
   },
   {
     "mfussenegger/nvim-lint",
@@ -149,6 +152,8 @@ return {
     opts = function(_, _)
       local dap = require "dap"
       local dapui = require "dapui"
+
+      dap.configurations.cuda = dap.configurations.cpp
 
       dapui.setup {}
 
