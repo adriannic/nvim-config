@@ -8,7 +8,7 @@ return {
         border = vim.o.winborder,
       },
     },
-    bigfile = { enabled = true },
+    bigfile = { enabled = false },
     bufdelete = { enabled = true },
     dashboard = {
       preset = {
