@@ -11,7 +11,7 @@ return {
       opts = {},
     }
   },
-  event = { "BufReadPre", "BufNewFile" },
+  lazy = false,
   opts = {
     options = {
       globalstatus = true,
