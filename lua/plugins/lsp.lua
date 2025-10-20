@@ -64,7 +64,7 @@ return {
           map("<Leader>la", vim.lsp.buf.code_action, "apply quickfix", { "n", "x" })
           map("<Leader>la", vim.lsp.buf.code_action, "code Action", { "n", "x" })
           map("<Leader>ld", function() vim.diagnostic.open_float() end, "show hover diagnostics")
-          map("<Leader>lf", vim.lsp.buf.format, "format buffer")
+          map("<Leader>lf", vim.lsp.buf.format, "format buffer", { "n", "x" })
           map("<Leader>ll", vim.lsp.codelens.run, "codelens run")
           map("<Leader>lr", vim.lsp.buf.rename, "rename")
           map("<Leader>ls", function() Snacks.picker.lsp_symbols() end, "find Symbols")
