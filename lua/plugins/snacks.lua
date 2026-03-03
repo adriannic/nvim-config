@@ -51,8 +51,10 @@ return {
     words = { enabled = true },
   },
   keys = {
+    -- Buffers
+    { "<Leader>c",  function() Snacks.bufdelete.delete() end,         desc = "Close buffer" },
     -- Explorer
-    { "<Leader>e",  function() Snacks.explorer.open() end,         desc = "Open explorer" },
+    -- { "<Leader>e",  function() Snacks.explorer.open() end,         desc = "Open explorer" },
     -- Find
     { "<Leader>fc", function() Snacks.picker.grep_word() end,      desc = "Find word under cursor",  mode = { "n", "x" } },
     { "<Leader>fC", function() Snacks.picker.colorschemes() end,   desc = "Find colorschemes" },
