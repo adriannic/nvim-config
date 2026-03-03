@@ -44,6 +44,7 @@ return {
   },
   {
     "mfussenegger/nvim-dap",
+		event = { "BufReadPre", "BufNewFile" },
     optional = true,
     specs = {
       {
