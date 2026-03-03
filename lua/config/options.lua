@@ -8,7 +8,9 @@ vim.o.signcolumn = "yes"
 
 vim.o.cursorline = true
 
-vim.schedule(function() vim.o.clipboard = "unnamedplus" end)
+vim.schedule(function()
+  vim.o.clipboard = "unnamedplus"
+end)
 
 vim.o.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
@@ -39,12 +41,12 @@ vim.o.scrolloff = 10
 
 vim.o.confirm = true
 
-vim.o.winborder = "rounded"
+vim.o.winborder = "single"
 
-vim.diagnostic.config {
+vim.diagnostic.config({
   severity_sort = true,
   float = {
-    border = "rounded",
+    border = "single",
     source = "if_many",
   },
   signs = {
@@ -55,4 +57,4 @@ vim.diagnostic.config {
       [vim.diagnostic.severity.HINT] = "󰌵 ",
     },
   },
-}
+})
