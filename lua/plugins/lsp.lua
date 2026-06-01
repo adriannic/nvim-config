@@ -46,12 +46,24 @@ return {
 					map("<Leader>lf", vim.lsp.buf.format, "format buffer", { "n", "x" })
 					map("<Leader>ll", vim.lsp.codelens.run, "codelens run")
 					map("<Leader>lr", vim.lsp.buf.rename, "rename")
-					map("<Leader>ls", function() Snacks.picker.lsp_symbols() end, "find Symbols")
-					map("gD", function() Snacks.picker.lsp_declarations() end, "goto declaration")
-					map("gI", function() Snacks.picker.lsp_implementations() end, "goto implementation")
-					map("gd", function() Snacks.picker.lsp_definitions() end, "goto definition")
-					map("gr", function() Snacks.picker.lsp_references() end, "goto references")
-					map("gt", function() Snacks.picker.lsp_type_definitions() end, "goto type definition")
+					map("<Leader>ls", function()
+						Snacks.picker.lsp_symbols()
+					end, "find Symbols")
+					map("gD", function()
+						Snacks.picker.lsp_declarations()
+					end, "goto declaration")
+					map("gI", function()
+						Snacks.picker.lsp_implementations()
+					end, "goto implementation")
+					map("gd", function()
+						Snacks.picker.lsp_definitions()
+					end, "goto definition")
+					map("gr", function()
+						Snacks.picker.lsp_references()
+					end, "goto references")
+					map("gt", function()
+						Snacks.picker.lsp_type_definitions()
+					end, "goto type definition")
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 
@@ -103,20 +115,6 @@ return {
 			"nvimtools/none-ls.nvim",
 		},
 		opts = {},
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		lazy = false,
-		opts = {
-			auto_install = true,
-			highlight = {
-				enable = true,
-			},
-			indent = {
-				enable = true,
-			},
-		},
 	},
 	{
 		"j-hui/fidget.nvim",
@@ -222,7 +220,7 @@ return {
 	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
-		dependencies = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" },
+		dependencies = { "mfussenegger/nvim-dap" },
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
 			commented = true,
