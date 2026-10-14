@@ -1,5 +1,6 @@
 return {
   "xiyaowong/transparent.nvim",
+  lazy = false,
   opts = function(_, opts)
     opts.extra_groups = {
       "NormalFloat",

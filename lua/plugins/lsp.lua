@@ -1,5 +1,9 @@
 return {
 	{
+		"mason-org/mason.nvim",
+		opts = {},
+	},
+	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		keys = {
@@ -14,14 +18,59 @@ return {
 				desc = "Open Mason",
 			},
 		},
-		opts = function(_, opts)
-			opts.auto_update = true
-			opts.start_delay = 0
-
+		dependencies = {
+			{
+				"mason-org/mason-lspconfig.nvim",
+				opts = {},
+				dependencies = {
+					"mason-org/mason.nvim",
+					"neovim/nvim-lspconfig",
+				},
+			},
+			{
+				"jay-babu/mason-null-ls.nvim",
+				dependencies = {
+					"mason-org/mason.nvim",
+					{
+						"nvimtools/none-ls.nvim",
+						dependencies = {
+							"nvim-lua/plenary.nvim",
+						},
+					},
+				},
+				opts = {},
+			},
+			"mfussenegger/nvim-dap",
+			{
+				"jay-babu/mason-nvim-dap.nvim",
+				dependencies = {
+					"mason-org/mason.nvim",
+				},
+			},
+		},
+		opts = {
+			ensure_installed = {
+				"lua_ls",
+			},
+		},
+	},
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		event = "LspAttach",
+		opts = {
+			diagnostics = {
+				virtual_text = false,
+			},
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		config = function()
 			vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
 				group = vim.api.nvim_create_augroup("config.lsp-lens", { clear = true }),
 				callback = function(_)
-					vim.lsp.codelens.refresh({ bufnr = 0 })
+					vim.lsp.codelens.enable(true, { bufnr = 0 })
 				end,
 			})
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -38,7 +87,6 @@ return {
 					map("<Leader>lD", function()
 						Snacks.picker.diagnostics()
 					end, "find diagnostics")
-					map("<Leader>lS", require("aerial").toggle, "show Symbols")
 					map("<Leader>la", vim.lsp.buf.code_action, "code Action", { "n", "x" })
 					map("<Leader>ld", function()
 						vim.diagnostic.open_float()
@@ -98,134 +146,16 @@ return {
 			})
 		end,
 	},
-	{
-		"mason-org/mason-lspconfig.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		opts = {},
-		dependencies = {
-			{ "mason-org/mason.nvim", opts = {} },
-			"neovim/nvim-lspconfig",
-		},
-	},
-	{
-		"jay-babu/mason-null-ls.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			"mason-org/mason.nvim",
-			"nvimtools/none-ls.nvim",
-		},
-		opts = {},
-	},
-	{
-		"j-hui/fidget.nvim",
-		event = "LSPAttach",
-		opts = {},
-	},
-
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			"mason-org/mason.nvim",
-			"mfussenegger/nvim-dap",
-		},
-		opts = {
-			automatic_setup = true,
-		},
-	},
-	{
-		"mfussenegger/nvim-lint",
-		event = { "BufReadPre", "BufNewFile" },
-		opts = {},
-		config = function() end,
-	},
-	{
-		"rachartier/tiny-inline-diagnostic.nvim",
-		event = "LspAttach",
-		opts = {
-			diagnostics = {
-				virtual_text = false,
+	dependencies = {
+		{
+			"folke/lazydev.nvim",
+			ft = "lua",
+			opts = {
+				library = { {
+					path = "${3rd}/luv/library",
+					words = { "vim%.uv" },
+				} },
 			},
-		},
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = {
-			"mfussenegger/nvim-dap",
-			"nvim-neotest/nvim-nio",
-		},
-		keys = {
-			{
-				"<F5>",
-				function()
-					require("dap").continue()
-				end,
-				desc = "Debug: Start/Continue",
-			},
-			{
-				"<F1>",
-				function()
-					require("dap").step_into()
-				end,
-				desc = "Debug: Step Into",
-			},
-			{
-				"<F2>",
-				function()
-					require("dap").step_over()
-				end,
-				desc = "Debug: Step Over",
-			},
-			{
-				"<F3>",
-				function()
-					require("dap").step_out()
-				end,
-				desc = "Debug: Step Out",
-			},
-			{
-				"<Leader>db",
-				function()
-					require("dap").toggle_breakpoint()
-				end,
-				desc = "Debug: Toggle breakpoint",
-			},
-			{
-				"<Leader>dB",
-				function()
-					require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
-				end,
-				desc = "Debug: Set breakpoint",
-			},
-			{
-				"<F7>",
-				function()
-					require("dapui").toggle()
-				end,
-				desc = "Debug: Toggle debug UI",
-			},
-		},
-		opts = function(_, _)
-			local dap = require("dap")
-			local dapui = require("dapui")
-
-			dap.configurations.cuda = dap.configurations.cpp
-
-			dapui.setup({})
-
-			dap.listeners.after.event_initialized["dapui_config"] = dapui.open
-			dap.listeners.before.event_terminated["dapui_config"] = dapui.close
-			dap.listeners.before.event_exited["dapui_config"] = dapui.close
-		end,
-	},
-	{
-		"theHamsta/nvim-dap-virtual-text",
-		dependencies = { "mfussenegger/nvim-dap" },
-		event = { "BufReadPre", "BufNewFile" },
-		opts = {
-			commented = true,
-			enabled = true,
-			enabled_commands = true,
 		},
 	},
 }

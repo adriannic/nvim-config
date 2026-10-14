@@ -2,10 +2,7 @@ return {
   "folke/which-key.nvim",
   event = "VeryLazy",
   dependencies = {
-    {
-      "nvim-tree/nvim-web-devicons",
-      opts = {},
-    },
+    "nvim-mini/mini.nvim",
   },
   opts = {
     preset = "helix",
@@ -13,6 +10,7 @@ return {
     delay = 0,
     spec = {
       { "<Leader>a", group = "Annotate" },
+      { "<Leader>b", group = "Build" },
       { "<Leader>c", group = " CodeSnap", mode = { "v" } },
       { "<Leader>d", group = "Debug" },
       { "<Leader>f", group = "Find", mode = { "n", "v" } },

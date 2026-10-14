@@ -1,60 +1,30 @@
 return {
   {
-    "nvim-treesitter/nvim-treesitter",
+    "mason-org/mason-lspconfig.nvim",
     optional = true,
     opts = function(_, opts)
-      if opts.ensure_installed ~= "all" then
-        opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, { "bash" })
-      end
+      opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, {
+        "bashls"
+      })
     end,
   },
   {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "jay-babu/mason-null-ls.nvim",
     optional = true,
     opts = function(_, opts)
-      opts.ensure_installed = vim.list_extend(opts.ensure_installed or {},
-        { "bash-language-server", "shellcheck", "shfmt", "bash-debug-adapter" })
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    optional = true,
-    opts = function(_, opts)
-      opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, { "bashls" })
-    end,
-  },
-  {
-    "williamboman/mason-null-ls.nvim",
-    optional = true,
-    opts = function(_, opts)
-      opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, { "shfmt", "shellcheck" })
+      opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, {
+        "shfmt",
+        "shellcheck"
+      })
     end,
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
     optional = true,
     opts = function(_, opts)
-      opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, { "bash" })
+      opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, {
+        "bash"
+      })
     end,
-  },
-  {
-    "stevearc/conform.nvim",
-    optional = true,
-    opts = {
-      formatters_by_ft = {
-        sh = { "shfmt", "shellcheck" },
-        zsh = { "shfmt", "shellcheck" },
-      },
-    },
-  },
-  {
-    "mfussenegger/nvim-lint",
-    optional = true,
-    opts = {
-      linters_by_ft = {
-        sh = { "shellcheck" },
-        zsh = { "shellcheck" },
-      },
-    },
   },
 }

@@ -3,6 +3,7 @@ vim.o.number = true
 
 vim.o.mouse = "a"
 vim.o.cmdheight = 0
+vim.opt.laststatus = 3
 
 vim.o.signcolumn = "yes"
 
